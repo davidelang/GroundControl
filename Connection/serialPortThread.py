@@ -21,6 +21,9 @@ class SerialPortThread(MakesmithInitFuncs):
         message = message.encode()
         print("Sending: " + str(message))
         
+        print "in: " + str(self.serialInstance.in_waiting);
+        print "out: " + str(self.serialInstance.out_waiting);
+        
         try:
             self.serialInstance.write(message)
         except:
